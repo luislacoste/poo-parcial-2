@@ -1,5 +1,13 @@
+
+import main.java.views.EventoViewer;
+
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
+        SwingUtilities.invokeLater(() -> {
+            EventoViewer viewer = new EventoViewer();
+            viewer.setVisible(true);
+        });
     }
 }

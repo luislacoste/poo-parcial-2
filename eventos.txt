@@ -1,0 +1,1 @@
+2,marvels,power,2002-02-02T00:00,palermo,{"asistentes":2,"lista":[{"nombre":"matias","email":"feo","asistio":true},{"nombre":"gian","email":"lindo","asistio":false}]}
