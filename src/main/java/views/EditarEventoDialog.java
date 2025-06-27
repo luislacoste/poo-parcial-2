@@ -1,6 +1,6 @@
 package main.java.views;
 
-import main.java.model.Evento;
+import main.java.clases.Evento;
 import main.java.util.EventoFileManager;
 
 import javax.swing.*;
@@ -81,10 +81,10 @@ public class EditarEventoDialog extends BaseDialog {
             }
 
             EventoFileManager.guardarEventos(eventos);
-            JOptionPane.showMessageDialog(this, "✅ Evento actualizado.");
+            JOptionPane.showMessageDialog(this, "Evento actualizado.");
             dispose();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "❌ Error: datos inválidos.");
+            JOptionPane.showMessageDialog(this, "Error: datos inválidos.");
         }
     }
 
@@ -98,9 +98,9 @@ public class EditarEventoDialog extends BaseDialog {
 
         if (confirmar == JOptionPane.YES_OPTION) {
             List<Evento> eventos = EventoFileManager.cargarEventos();
-            eventos.removeIf(e -> e.getId() == evento.getId());
+            eventos.remove(evento);
             EventoFileManager.guardarEventos(eventos);
-            JOptionPane.showMessageDialog(this, "✅ Evento eliminado.");
+            JOptionPane.showMessageDialog(this, "Evento eliminado.");
             dispose();
         }
     }

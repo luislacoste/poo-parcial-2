@@ -1,7 +1,7 @@
-package main.java.controller;
+package main.java.controladores;
 
-import main.java.model.Asistente;
-import main.java.model.Evento;
+import main.java.clases.Asistente;
+import main.java.clases.Evento;
 import main.java.util.EventoFileManager;
 
 import java.util.*;
@@ -16,7 +16,7 @@ public class EventoController {
 
     public void eliminarEventoPorId(int id) {
         List<Evento> eventos = EventoFileManager.cargarEventos();
-        eventos.removeIf(e -> e.getId() == id);
+        eventos.remove(id);
         EventoFileManager.guardarEventos(eventos);
     }
 

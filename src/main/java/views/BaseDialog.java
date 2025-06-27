@@ -3,6 +3,12 @@ package main.java.views;
 import javax.swing.*;
 import java.awt.*;
 
+
+/**
+ * Clase base para los diálogos de la aplicación.
+ * Proporciona un diseño común y botones de acción.
+ * tambien para poder usar un extend (visto en clases)
+ **/
 public abstract class BaseDialog extends JDialog {
     protected JButton guardarBtn, cancelarBtn;
 

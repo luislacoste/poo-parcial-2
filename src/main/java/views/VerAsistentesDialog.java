@@ -1,9 +1,9 @@
 package main.java.views;
 
 
-import main.java.controller.EventoController;
-import main.java.model.Asistente;
-import main.java.model.Evento;
+import main.java.controladores.EventoController;
+import main.java.clases.Asistente;
+import main.java.clases.Evento;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

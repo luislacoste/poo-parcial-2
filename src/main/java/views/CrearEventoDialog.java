@@ -1,6 +1,6 @@
 package main.java.views;
 
-import main.java.model.Evento;
+import main.java.clases.Evento;
 import main.java.util.EventoFileManager;
 
 import javax.swing.*;
@@ -69,10 +69,10 @@ public class CrearEventoDialog extends BaseDialog {
             eventos.add(nuevo);
             EventoFileManager.guardarEventos(eventos);
 
-            JOptionPane.showMessageDialog(this, "✅ Evento creado con éxito.");
+            JOptionPane.showMessageDialog(this, "Evento creado con éxito.");
             dispose();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "❌ Fecha inválida. Usá números válidos para día, mes y año.");
+            JOptionPane.showMessageDialog(this, "Fecha inválida. Usá números válidos para día, mes y año.");
         }
     }
 }

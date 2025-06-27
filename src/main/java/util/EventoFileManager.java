@@ -5,9 +5,11 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
-import main.java.model.Evento;
+import main.java.clases.Evento;
 
 public class EventoFileManager {
+
+    // GPT ayudo para poder guardar y abrir los eventos en un archivo de texto
     private static final String ARCHIVO = "eventos.txt";
 
     public static void guardarEventos(List<Evento> eventos) {
@@ -40,7 +42,7 @@ public class EventoFileManager {
             System.err.println("Error al leer eventos: " + e.getMessage());
         }
 
-        // 🔽 Ordenar por fecha descendente (más nuevo primero)
+        // Ordenar por fecha descendente (más nuevo primero) (NO GPT, visto en clases)
         eventos.sort((e1, e2) -> e2.getFecha().compareTo(e1.getFecha()));
 
         return eventos;

@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.clases;
 
 
 public class Asistente {
@@ -12,12 +12,7 @@ public class Asistente {
         this.asistio = asistio;
     }
 
-    public Asistente(String nombre, String email) {
-        setNombre(nombre);
-        setEmail(email);
-        setAsistio(false);
-    }
-
+    // Getters
     public String getNombre() {
         return nombre;
     }
@@ -26,27 +21,30 @@ public class Asistente {
         return email;
     }
 
-    public boolean isAsistio() {
-        return asistio;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    // Setters
     public void setAsistio(boolean asistio) {
         this.asistio = asistio;
     }
 
+    public boolean isAsistio() {
+        return asistio;
+    }
+
+
+
+
+
+
+
+
+
+    // Paso el asistente a JSON (gpt para el regex)
     public String toJSON() {
         return String.format("{\"nombre\":\"%s\",\"email\":\"%s\",\"asistio\":%s}",
                 nombre, email, asistio);
     }
 
+    // Leo el txt y paso el json a la clase asistente (incializandola)
     public static Asistente fromJSON(String json) {
         try {
             String nombre = json.replaceAll(".*\"nombre\":\"([^\"]+)\".*", "$1");

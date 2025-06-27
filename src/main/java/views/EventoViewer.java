@@ -1,9 +1,9 @@
 package main.java.views;
 
 
-import main.java.controller.EventoController;
-import main.java.model.Asistente;
-import main.java.model.Evento;
+import main.java.controladores.EventoController;
+import main.java.clases.Asistente;
+import main.java.clases.Evento;
 import main.java.util.EventoFileManager;
 
 import javax.swing.*;
@@ -81,8 +81,8 @@ public class EventoViewer extends JFrame {
             }
         });
 
-        // ✏️ Botón editar asistentes
-        JButton botonEditarAsistentes = new JButton("✏️ Ver/Editar asistentes");
+        // Botón editar asistentes
+        JButton botonEditarAsistentes = new JButton("Ver/Editar asistentes");
         botonEditarAsistentes.addActionListener(e -> {
             int fila = tablaEventos.getSelectedRow();
             if (fila == -1) {
@@ -115,17 +115,18 @@ public class EventoViewer extends JFrame {
         JMenu menu = new JMenu("Menú");
 
 
-        JMenuItem item2 = new JMenuItem("Crear evento");
-        JMenuItem item4 = new JMenuItem("Eliminar evento");
-        JMenuItem item0 = new JMenuItem("Salir");
+        JMenuItem crearEvento = new JMenuItem("Crear evento");
+        JMenuItem eliminarEvento = new JMenuItem("Eliminar evento");
+        JMenuItem salir = new JMenuItem("Salir");
 
 
-        item2.addActionListener(e -> {
+        crearEvento.addActionListener(e -> {
             CrearEventoDialog dialog = new CrearEventoDialog(this);
             dialog.setVisible(true);
             cargarEventos();
         });
-        item4.addActionListener(e -> {
+
+        eliminarEvento.addActionListener(e -> {
             int fila = tablaEventos.getSelectedRow();
             if (fila == -1) {
                 JOptionPane.showMessageDialog(this, "Selecciona un evento primero.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -152,7 +153,7 @@ public class EventoViewer extends JFrame {
             }
         });
 
-        item0.addActionListener(e -> {
+        salir.addActionListener(e -> {
             int confirmar = JOptionPane.showConfirmDialog(
                     this,
                     "Desea salir?",
@@ -160,15 +161,15 @@ public class EventoViewer extends JFrame {
                     JOptionPane.YES_NO_OPTION
             );
             if (confirmar == JOptionPane.YES_OPTION) {
-                dispose();
+                System.exit(0);
             }
         });
 
 
-        menu.add(item2);
-        menu.add(item4);
+        menu.add(crearEvento);
+        menu.add(eliminarEvento);
         menu.addSeparator();
-        menu.add(item0);
+        menu.add(salir);
 
         menuBar.add(menu);
         setJMenuBar(menuBar);

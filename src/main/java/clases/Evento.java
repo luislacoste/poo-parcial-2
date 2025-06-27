@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.clases;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -47,7 +47,6 @@ public class Evento {
     }
 
     // Setters
-
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -68,8 +67,8 @@ public class Evento {
         asistentes.add(asistente);
     }
 
-    // Convert to CSV format
-    // Para CSV, agregamos los asistentes como lista separada por ;
+    // Transformo el evento a CSV con los asistentes en formato JSON (GPT ayudo aca)
+    // lo podria hacer con lista de listas, pero el uso de diccionarios es mas facil de entender aca
     public String toCSV() {
         StringBuilder asistentesJson = new StringBuilder();
         asistentesJson.append("{\"asistentes\":")
@@ -85,6 +84,7 @@ public class Evento {
 
         asistentesJson.append("]}");
 
+        // La fila CSV contiene: id, titulo, descripcion, fecha, ubicacion, asistentes en formato JSON
         return String.join(",",
                 String.valueOf(id),
                 titulo,
@@ -96,6 +96,9 @@ public class Evento {
     }
 
 
+
+    // Parseo el CSV a un objeto Evento (GPT ayudo aca, mas que nada en los regex)
+    // Manejo de excepciones hecho por mi
     public static Evento fromCSV(String csv) {
         try {
             String[] parts = csv.split(",", 6); // dejamos json completo en part[5]

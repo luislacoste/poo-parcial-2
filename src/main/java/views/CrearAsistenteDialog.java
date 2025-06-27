@@ -1,6 +1,6 @@
 package main.java.views;
 
-import main.java.model.Asistente;
+import main.java.clases.Asistente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,6 +44,6 @@ public class CrearAsistenteDialog extends JDialog {
     }
 
     public Asistente getAsistente() {
-        return new Asistente(nombreField.getText(), emailField.getText());
+        return new Asistente(nombreField.getText(), emailField.getText(), false);
     }
 }
