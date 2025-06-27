@@ -1,1 +1,2 @@
+3,rayo,carreras,2003-02-03T00:00,recoleta,{"asistentes":1,"lista":[{"nombre":"tomas","email":"maildetomas","asistio":true}]}
 2,marvels,power,2002-02-02T00:00,palermo,{"asistentes":2,"lista":[{"nombre":"matias","email":"feo","asistio":true},{"nombre":"gian","email":"lindo","asistio":false}]}
