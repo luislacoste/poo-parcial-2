@@ -4,16 +4,13 @@ import main.java.model.Asistente;
 import main.java.model.Evento;
 import main.java.util.EventoFileManager;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class EventoController {
     private List<Evento> eventos;
-    private Scanner scanner;
 
     public EventoController() {
         this.eventos = EventoFileManager.cargarEventos();
-        this.scanner = new Scanner(System.in);
     }
 
 
@@ -34,6 +31,7 @@ public class EventoController {
         return null;
     }
 
+    // Edito un evento existente y lo guardo en el txt
     public void actualizarEvento(Evento eventoActualizado) {
         List<Evento> eventos = EventoFileManager.cargarEventos();
         for (int i = 0; i < eventos.size(); i++) {
@@ -46,6 +44,7 @@ public class EventoController {
     }
 
 
+    // Agrego el asistente a el txt y al evento
     public void agregarAsistente(int eventoId, Asistente asistente) {
         List<Evento> eventos = EventoFileManager.cargarEventos();
         for (Evento evento : eventos) {
