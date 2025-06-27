@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class CrearEventoDialog extends BaseDialog {
+public class CrearEventoDialog extends BotonesView {
     private JTextField tituloField, descripcionField, ubicacionField;
     private JTextField diaField, mesField, anioField;
 

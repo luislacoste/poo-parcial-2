@@ -8,7 +8,7 @@ import java.awt.*;
 import java.time.LocalDate;
 import java.util.List;
 
-public class EditarEventoDialog extends BaseDialog {
+public class EditarEventoDialog extends BotonesView {
     private JTextField tituloField, descripcionField, ubicacionField;
     private JTextField diaField, mesField, anioField;
     private Evento evento;
