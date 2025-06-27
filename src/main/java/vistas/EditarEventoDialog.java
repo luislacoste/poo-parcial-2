@@ -1,4 +1,4 @@
-package main.java.views;
+package main.java.vistas;
 
 import main.java.clases.Evento;
 import main.java.util.EventoFileManager;

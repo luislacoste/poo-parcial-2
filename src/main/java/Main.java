@@ -1,6 +1,6 @@
 package main.java;
 
-import main.java.views.EventoViewer;
+import main.java.vistas.EventoViewer;
 
 import javax.swing.*;
 
